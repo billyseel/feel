@@ -27,7 +27,7 @@ DEBUG = False
 
 # CORS_ORIGIN_ALLOW_ALL = False
 
-ALLOWED_HOSTS = ['djangofri.herokuapp.com/']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
