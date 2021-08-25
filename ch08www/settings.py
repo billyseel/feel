@@ -23,12 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*(d+2v8@jlbx16jj@nu*f*2i&jac&8v0lw8zj(8#9p77d^f6dv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [
-    'djangofri.herokuapp.com/'
-]
+CORS_ORIGIN_ALLOW_ALL = False
 
+ALLOWED_HOSTS = ['127.0.0.1','djangofri.herokuapp.com/']
 
 # Application definition
 
@@ -83,7 +82,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
