@@ -1,1 +1,1 @@
-web: gunicorn urexpenses.wsgi
+web: gunicorn ch08www.wsgi
