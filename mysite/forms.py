@@ -1,7 +1,7 @@
-#_*_ encoding: utf-8 *_*
+from . import models
 from django import forms
- 
- 
+
+
 class ContactForm(forms.Form):
     CITY = [
         ['TP', 'Taipei'],
@@ -11,20 +11,19 @@ class ContactForm(forms.Form):
         ['KS', 'Kaohsiung'],
         ['NA', 'Others'],
     ]
-    user_name = forms.CharField(label='您的姓名', max_length=50, initial='李大仁')
-    user_city = forms.ChoiceField(label='居住城市', choices=CITY)
-    user_school = forms.BooleanField(label='是否在學', required=False)
-    user_email = forms.EmailField(label='電子郵件')
-    user_message = forms.CharField(label='您的意見', widget=forms.Textarea)
+    user_name = forms.CharField(
+        label='your name', max_length=50, initial='chin')
+    user_city = forms.ChoiceField(label='citylabel', choices=CITY)
+    user_school = forms. BooleanField(label='your school', required=False)
+    user_email = forms.EmailField(label='your email')
+    user_message = forms.CharField(label='your user', widget=forms.Textarea)
 
-from . import models
- 
- 
+
 class PostForm(forms.ModelForm):
     class Meta:
         model = models.Post
         fields = ['mood', 'nickname', 'message', 'del_pass']
- 
+
     def __init__(self, *args, **kwargs):
         super(PostForm, self).__init__(*args, **kwargs)
         self.fields['mood'].label = '現在心情'
