@@ -15,7 +15,7 @@ def index(request, pid=None, del_pass=None):
         user_mood = request.GET['mood']
     except:
         user_id = None
-        message = "there is a message here..."
+        message = "Now waiting for your new Post..."
 
     if del_pass and pid:
         try:
@@ -33,7 +33,7 @@ def index(request, pid=None, del_pass=None):
         post = models.Post.objects.create(
             mood=mood, nickname=user_id, del_pass=user_pass, message=user_post)
         post.save()
-        message = 'there is a long message here[{}]!, some other message'.format(
+        message = 'Your post was loaded with delete Number[{}]!, you can use it to delete the message'.format(
             user_pass)
 
     return render(request, 'index.html', locals())
