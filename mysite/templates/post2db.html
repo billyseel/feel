@@ -1,5 +1,29 @@
-{% extends "header.html" %}
+<!-- post2db.html (ch08www project) -->
+{% extends "base.html" %}
+{% block title %}我有話要說{% endblock %}
+{% block content %}
+<div class="container">
+    {% if message %}
+    <div class="alert alert-warning">{{ message }}</div>
+    {% endif %}
 
+    <form name='my form' action=',' method='POST'>
+        {% csrf_token %}
+        <table>
+            {{ post_form.as_table }}
+        </table>
+        <input type="submit" value="chine word">
+        <input type="reset" value="second chine word">
+    </form>
+</div>
+{% endblock %}
+
+
+
+
+
+
+{% comment %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,4 +39,4 @@
 </body>
 
 </html>
-{% extends "footer.html" %}
+{% extends "footer.html" %} {% endcomment %}
